@@ -228,11 +228,45 @@
         "type": "github"
       }
     },
+    "plugins-colorscheme-gruvbox": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1738710709,
+        "narHash": "sha256-BBMDCIhwTvZQyeWug8zzUwV8uuqQIkpXtEpoErvAKFc=",
+        "owner": "ellisonleao",
+        "repo": "gruvbox.nvim",
+        "rev": "089b60e92aa0a1c6fa76ff527837cd35b6f5ac81",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ellisonleao",
+        "repo": "gruvbox.nvim",
+        "type": "github"
+      }
+    },
+    "plugins-tree-sitter-language-injection": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1728632916,
+        "narHash": "sha256-aUEHsuccFE4AHZ6Zct7vb1n/S0LXlGehQWP53CyEInU=",
+        "owner": "dariuscorvus",
+        "repo": "tree-sitter-language-injection.nvim",
+        "rev": "453d6b08053b3c7df4491d1ffb84fc395da110d6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "dariuscorvus",
+        "repo": "tree-sitter-language-injection.nvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixCats": "nixCats",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_2",
+        "plugins-colorscheme-gruvbox": "plugins-colorscheme-gruvbox",
+        "plugins-tree-sitter-language-injection": "plugins-tree-sitter-language-injection"
       }
     },
     "treefmt-nix": {
