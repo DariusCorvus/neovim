@@ -1,40 +1,39 @@
 {
   "nodes": {
-    "lazyvim-starter": {
-      "flake": false,
+    "nixCats": {
       "locked": {
-        "lastModified": 1733936199,
-        "narHash": "sha256-QrpnlDD4r1X4C8PqBhQ+S3ar5C+qDrU1Jm/lPqyMIFM=",
-        "owner": "LazyVim",
-        "repo": "starter",
-        "rev": "803bc181d7c0d6d5eeba9274d9be49b287294d99",
+        "lastModified": 1738991100,
+        "narHash": "sha256-smTBsgrpagQrPWnOSq4wcz1Q1UJ4denBNPmBAJN2Ol4=",
+        "owner": "BirdeeHub",
+        "repo": "nixCats-nvim",
+        "rev": "54e2cc42dbefb9e152d9584794f5d8d94a20a534",
         "type": "github"
       },
       "original": {
-        "owner": "LazyVim",
-        "repo": "starter",
+        "owner": "BirdeeHub",
+        "repo": "nixCats-nvim",
         "type": "github"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1739020877,
-        "narHash": "sha256-mIvECo/NNdJJ/bXjNqIh8yeoSjVLAuDuTUzAo7dzs8Y=",
-        "owner": "NixOS",
+        "lastModified": 1739019272,
+        "narHash": "sha256-7Fu7oazPoYCbDzb9k8D/DdbKrC3aU1zlnc39Y8jy/s8=",
+        "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "a79cfe0ebd24952b580b1cf08cd906354996d547",
+        "rev": "fa35a3c8e17a3de613240fea68f876e5b4896aec",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
+        "owner": "nixos",
+        "ref": "nixpkgs-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
     },
     "root": {
       "inputs": {
-        "lazyvim-starter": "lazyvim-starter",
+        "nixCats": "nixCats",
         "nixpkgs": "nixpkgs"
       }
     }
