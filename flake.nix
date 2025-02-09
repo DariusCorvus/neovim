@@ -57,6 +57,7 @@
               vim.g.mapleader = " "
             EOF
           '';
+	  lua = pkgs.luajit;
         };
       };
 
