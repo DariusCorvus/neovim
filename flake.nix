@@ -116,6 +116,8 @@
               fzf
               stdenv.cc.cc
               lua-language-server
+              svelte-language-server
+              tailwindcss-language-server
               nil # I would go for nixd but lazy chooses this one idk
               stylua
               nixfmt-rfc-style
