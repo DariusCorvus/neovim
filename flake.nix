@@ -16,7 +16,7 @@
       flake = false;
     };
     plugins-tree-sitter-language-injection = {
-      url = "github:dariuscorvus/tree-sitter-language-injection.nvim/dev";
+      url = "github:dariuscorvus/tree-sitter-language-injection.nvim";
       flake = false;
     };
 
