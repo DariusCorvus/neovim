@@ -115,6 +115,7 @@
               fd
               fzf
               stdenv.cc.cc
+              vtsls
               lua-language-server
               svelte-language-server
               tailwindcss-language-server
