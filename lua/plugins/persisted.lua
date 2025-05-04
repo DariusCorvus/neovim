@@ -5,7 +5,7 @@ return {
   },
   {
     'olimorris/persisted.nvim',
-    event = 'BufReadPre',
+    event = 'VimEnter',
     opts = {
       use_git_branch = true,
       autoload = true,
