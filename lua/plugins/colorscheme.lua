@@ -6,4 +6,7 @@ return {
       colorscheme = 'gruvbox',
     },
   },
+  { 'nvim-lualine/lualine.nvim', opts = {
+    theme = 'gruvbox_dark',
+  } },
 }
