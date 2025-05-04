@@ -124,6 +124,7 @@
               nixfmt-rfc-style
               vscode-langservers-extracted
               taplo # TOML toolkit written in rust
+              kdePackages.qtdeclarative # QMLLS
             ];
           };
 
