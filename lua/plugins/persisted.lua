@@ -20,5 +20,28 @@ return {
       use_git_branch = true,
       autoload = true,
     },
+    keys = {
+      {
+        '<leader>qs',
+        function()
+          require('persisted').load()
+        end,
+        desc = 'Restore Session',
+      },
+      {
+        '<leader>qS',
+        function()
+          require('persisted').select()
+        end,
+        desc = 'Select Session',
+      },
+      {
+        '<leader>ql',
+        function()
+          require('persisted').last()
+        end,
+        desc = 'Restore Session',
+      },
+    },
   },
 }
