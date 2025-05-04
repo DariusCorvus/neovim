@@ -14,6 +14,7 @@ return {
   {
     'olimorris/persisted.nvim',
     event = 'BufReadPre',
+    lazy = false,
     opts = {
       follow_cwd = true,
       use_git_branch = true,
