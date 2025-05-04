@@ -1,9 +1,9 @@
 local function augroup(name)
-  return vim.api.nvim_create_augroup('darius.codes' .. name, { clear = true })
+  return vim.api.nvim_create_augroup('darius.codes:' .. name, { clear = true })
 end
 local persisted = require 'persisted'
 vim.api.nvim_create_autocmd('VimEnter', {
-  group = augroup 'persisted_autoload',
+  group = augroup 'persisted',
   nested = true,
   callback = function()
     if vim.g.started_with_stdin then
