@@ -16,7 +16,6 @@ return {
     event = 'BufReadPre',
     lazy = false,
     opts = {
-      follow_cwd = true,
       use_git_branch = true,
       autoload = true,
     },
