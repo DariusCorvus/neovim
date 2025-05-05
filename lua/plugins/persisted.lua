@@ -23,12 +23,12 @@ return {
       {
         '<leader>qs',
         function()
-          require('persisted').load()
+          require('persisted').save()
         end,
-        desc = 'Restore Session',
+        desc = 'Save Session',
       },
       {
-        '<leader>qS',
+        '<leader>qf',
         function()
           require('persisted').select()
         end,
@@ -37,9 +37,16 @@ return {
       {
         '<leader>ql',
         function()
-          require('persisted').last()
+          require('persisted').load()
         end,
-        desc = 'Restore Session',
+        desc = 'Load Session',
+      },
+      {
+        '<leader>qd',
+        function()
+          require('persisted').delete()
+        end,
+        desc = 'Delete Session',
       },
     },
   },
