@@ -120,6 +120,7 @@
               svelte-language-server
               tailwindcss-language-server
               nil # I would go for nixd but lazy chooses this one idk
+              nixd
               stylua
               nixfmt-rfc-style
               vscode-langservers-extracted
@@ -127,6 +128,7 @@
               kdePackages.qtdeclarative # QMLLS
 
               nodePackages_latest.prettier
+              nodePackages_latest.eslint
             ];
           };
 
