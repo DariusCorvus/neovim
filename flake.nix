@@ -73,6 +73,7 @@
           # Once we add this overlay to our nixpkgs, we are able to
           # use `pkgs.neovimPlugins`, which is a set of our plugins.
           (utils.standardPluginOverlay inputs)
+          (import ./overlays/typescript-svelte-plugin.nix)
           # add any other flake overlays here.
 
           # when other people mess up their overlays by wrapping them with system,
