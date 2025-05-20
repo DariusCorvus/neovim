@@ -127,8 +127,11 @@
               taplo # TOML toolkit written in rust
               kdePackages.qtdeclarative # QMLLS
 
+              nodejs_24
+              nodePackages_latest.neovim
               nodePackages_latest.prettier
               nodePackages_latest.eslint
+              nodePackages_latest.typescript
             ];
           };
 
