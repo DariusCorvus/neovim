@@ -3,6 +3,7 @@ return {
     'neovim/nvim-lspconfig',
     opts = {
       servers = {
+        svelte = {},
         qmlls = {
           cmd = { 'qmlls' },
           filetypes = { 'qml', 'qmljs' },
