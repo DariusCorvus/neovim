@@ -120,9 +120,9 @@
               vtsls
               svelte-language-server
               tailwindcss-language-server
+
               nil # I would go for nixd but lazy chooses this one idk
               nixd
-              stylua
               nixfmt-rfc-style
               vscode-langservers-extracted
               taplo # TOML toolkit written in rust
@@ -133,7 +133,9 @@
               nodePackages_latest.prettier
               nodePackages_latest.eslint
               nodePackages_latest.typescript
+              # typescript-svelte-plugin
 
+              stylua
               lua-language-server
               luajitPackages.luarocks
               lua51Packages.lua
