@@ -113,6 +113,7 @@
               curl
               lazygit
               ripgrep
+              ast-grep
               fd
               fzf
               stdenv.cc.cc
