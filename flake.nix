@@ -267,6 +267,9 @@
           # this section is for environmentVariables that should be available
           # at RUN TIME for plugins. Will be available to path within neovim terminal
           environmentVariables = {
+            general = {
+              TS_SVELTE_PLUGIN_PATH = "${pkgs.typescript-svelte-plugin.package}/lib/node_modules/typescript-svelte-plugin";
+            };
             test = {
               CATTESTVAR = "It worked!";
             };
