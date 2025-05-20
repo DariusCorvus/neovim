@@ -116,7 +116,6 @@
               fzf
               stdenv.cc.cc
               vtsls
-              lua-language-server
               svelte-language-server
               tailwindcss-language-server
               nil # I would go for nixd but lazy chooses this one idk
@@ -132,6 +131,10 @@
               nodePackages_latest.prettier
               nodePackages_latest.eslint
               nodePackages_latest.typescript
+
+              lua-language-server
+              luajitPackages.luarocks
+              lua51Packages.lua
             ];
           };
 
