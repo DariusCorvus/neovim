@@ -141,6 +141,7 @@
               lua51Packages.lua
 
               sqlite
+              sqlfluff
             ];
           };
 
