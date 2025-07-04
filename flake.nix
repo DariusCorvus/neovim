@@ -143,6 +143,9 @@
               sqlite
               sqlfluff # linter
               sqls # lsp
+
+              pyright
+              ruff
             ];
           };
 
