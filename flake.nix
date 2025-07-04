@@ -19,6 +19,10 @@
       url = "github:dariuscorvus/tree-sitter-language-injection.nvim";
       flake = false;
     };
+    plugins-tree-sitter-surrealdb-nvim = {
+      url = "github:dariuscorvus/tree-sitter-surrealdb.nvim";
+      flake = false;
+    };
 
     # see :help nixCats.flake.inputs
     # If you want your plugin to be loaded by the standard overlay,
