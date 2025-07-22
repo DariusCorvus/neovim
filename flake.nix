@@ -19,7 +19,7 @@
       url = "github:dariuscorvus/tree-sitter-language-injection.nvim";
       flake = false;
     };
-    plugins-tree-sitter-surrealdb-nvim = {
+    plugins-tree-sitter-surrealdb = {
       url = "github:dariuscorvus/tree-sitter-surrealdb.nvim";
       flake = false;
     };
@@ -78,6 +78,7 @@
           # use `pkgs.neovimPlugins`, which is a set of our plugins.
           (utils.standardPluginOverlay inputs)
           (import ./overlays/typescript-svelte-plugin.nix)
+          (import ./overlays/treesitter-surrealdb-nvim.nix)
           # add any other flake overlays here.
 
           # when other people mess up their overlays by wrapping them with system,
@@ -160,6 +161,7 @@
             general = [
               pkgs.neovimPlugins.colorscheme-gruvbox
               pkgs.neovimPlugins.tree-sitter-language-injection
+              pkgs.neovimPlugins.tree-sitter-surrealdb
               vim-tmux-navigator
               # LazyVim
               lazy-nvim
@@ -207,12 +209,25 @@
               nvim-treesitter-textobjects
               nvim-treesitter.withAllGrammars
               # This is for if you only want some of the grammars
-              # (nvim-treesitter.withPlugins (
-              #   plugins: with plugins; [
-              #     nix
-              #     lua
-              #   ]
-              # ))
+              (nvim-treesitter.withPlugins (
+                _:
+                nvim-treesitter.allGrammars
+                ++ [
+                  (pkgs.tree-sitter.buildGrammar {
+                    language = "surrealdb";
+                    version = "0.1.0";
+                    src = pkgs.fetchFromGitHub {
+                      owner = "DariusCorvus";
+                      repo = "tree-sitter-surrealdb";
+
+                      rev = "main"; # You can pin a commit for reproducibility
+                      # Replace below with actual hash or use lib.fakeSha256 for testing
+                      sha256 = "05fk80mmhdiyc8nyh1l6zpj9g89cjq6m0cd6jz8f45ha8jagj5gz";
+                    };
+                    files = [ "src/parser.c" ];
+                  })
+                ]
+              ))
 
               # sometimes you have to fix some names
               {
