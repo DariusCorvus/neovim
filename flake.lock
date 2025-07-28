@@ -244,22 +244,6 @@
         "type": "github"
       }
     },
-    "plugins-tree-sitter-language-injection": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1740649603,
-        "narHash": "sha256-8pTkdLvRUZLNvTo0yKjGA5alFJ+9KF6Pi+ByFrZRIPY=",
-        "owner": "dariuscorvus",
-        "repo": "tree-sitter-language-injection.nvim",
-        "rev": "38be7b5817e9e1e4f01af547923f0294f2ea534b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "dariuscorvus",
-        "repo": "tree-sitter-language-injection.nvim",
-        "type": "github"
-      }
-    },
     "plugins-tree-sitter-surrealdb": {
       "flake": false,
       "locked": {
@@ -282,7 +266,6 @@
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs_2",
         "plugins-colorscheme-gruvbox": "plugins-colorscheme-gruvbox",
-        "plugins-tree-sitter-language-injection": "plugins-tree-sitter-language-injection",
         "plugins-tree-sitter-surrealdb": "plugins-tree-sitter-surrealdb"
       }
     },

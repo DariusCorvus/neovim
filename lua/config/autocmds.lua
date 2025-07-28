@@ -1,3 +1,4 @@
+vim.opt.rtp:append(vim.fn.expand '~/.config/nvim')
 local function augroup(name)
   return vim.api.nvim_create_augroup('darius.codes:' .. name, { clear = true })
 end

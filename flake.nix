@@ -15,10 +15,6 @@
       url = "github:ellisonleao/gruvbox.nvim";
       flake = false;
     };
-    plugins-tree-sitter-language-injection = {
-      url = "github:dariuscorvus/tree-sitter-language-injection.nvim";
-      flake = false;
-    };
     plugins-tree-sitter-surrealdb = {
       url = "github:dariuscorvus/tree-sitter-surrealdb.nvim";
       flake = false;
@@ -160,7 +156,6 @@
           startupPlugins = with pkgs.vimPlugins; {
             general = [
               pkgs.neovimPlugins.colorscheme-gruvbox
-              pkgs.neovimPlugins.tree-sitter-language-injection
               pkgs.neovimPlugins.tree-sitter-surrealdb
               vim-tmux-navigator
               # LazyVim
