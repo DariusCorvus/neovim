@@ -110,6 +110,10 @@
           # this includes LSPs
           lspsAndRuntimeDeps = with pkgs; {
             general = [
+              ghostscript # PostScript interpreter
+              tectonic # Tectonic TeX/LaTeX engine, wrapped with a compatible biber
+              mermaid-cli # Generation of diagrams from text in a similar manner as markdown
+              imagemagick # Software suite to create, edit, compose, or convert bitmap images
               universal-ctags
               curl
               lazygit
@@ -134,19 +138,24 @@
               nodePackages_latest.prettier
               nodePackages_latest.eslint
               nodePackages_latest.typescript
-              # typescript-svelte-plugin
 
-              stylua
-              lua-language-server
-              luajitPackages.luarocks
-              lua51Packages.lua
+              stylua # Opinionated Lua code formatter
+              lua-language-server # Language server that offers Lua language support
+              luajitPackages.luarocks # Package manager for Lua
+              lua51Packages.lua # Powerful, fast, lightweight, embeddable scripting language
 
-              sqlite
+              rust-analyzer # Modular compiler frontend for the Rust language
+
+              bash-language-server # A language server for Bash
+
+              lldb_21 # Next-generation high-performance debugger
+
+              sqlite # Self-contained, serverless, zero-configuration, transactional SQL database engine
               sqlfluff # linter
               sqls # lsp
 
-              pyright
-              ruff
+              pyright # Type checker for the Python language
+              ruff # Extremely fast Python linter and code formatter
             ];
           };
 
