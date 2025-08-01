@@ -110,6 +110,14 @@
           # this includes LSPs
           lspsAndRuntimeDeps = with pkgs; {
             general = [
+              fishMinimal # Smart and user-friendly command line shell
+              markdownlint-cli2 # Fast, flexible, configuration-based command-line interface for linting Markdown/CommonMark files with the markdownlint library
+              viu # Command-line application to view images from the terminal written in Rust
+              shfmt # Shell parser and formatter
+              chafa # Terminal graphics for the 21st century
+              ueberzugpp # Drop in replacement for ueberzug written in C++
+              python313Packages.pylatexenc # Simple LaTeX parser providing latex-to-unicode and unicode-to-latex conversion
+
               ghostscript # PostScript interpreter
               tectonic # Tectonic TeX/LaTeX engine, wrapped with a compatible biber
               mermaid-cli # Generation of diagrams from text in a similar manner as markdown
