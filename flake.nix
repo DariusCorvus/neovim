@@ -165,6 +165,8 @@
               sqlfluff # linter
               sqls # lsp
 
+              marksman # Language Server for Markdown
+
               pyright # Type checker for the Python language
               ruff # Extremely fast Python linter and code formatter
             ];
