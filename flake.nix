@@ -75,6 +75,7 @@
           (utils.standardPluginOverlay inputs)
           (import ./overlays/typescript-svelte-plugin.nix)
           (import ./overlays/treesitter-surrealdb-nvim.nix)
+
           # add any other flake overlays here.
 
           # when other people mess up their overlays by wrapping them with system,
@@ -110,6 +111,8 @@
           # this includes LSPs
           lspsAndRuntimeDeps = with pkgs; {
             general = [
+              (pkgs.callPackage ./nixpkgs/markdown-doc/package.nix { })
+
               fishMinimal # Smart and user-friendly command line shell
               markdownlint-cli2 # Fast, flexible, configuration-based command-line interface for linting Markdown/CommonMark files with the markdownlint library
               viu # Command-line application to view images from the terminal written in Rust
