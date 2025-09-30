@@ -125,9 +125,12 @@
               tectonic # Tectonic TeX/LaTeX engine, wrapped with a compatible biber
               mermaid-cli # Generation of diagrams from text in a similar manner as markdown
               imagemagick # Software suite to create, edit, compose, or convert bitmap images
+
               universal-ctags
               curl
-              lazygit
+              (pkgs.writeShellScriptBin "lazygit" ''
+                exec ${pkgs.lazygit}/bin/lazygit --use-config-file ${pkgs.writeText "lazygit_config.yml" ""} "$@"
+              '')
               ripgrep
               ast-grep
               fd
@@ -179,38 +182,25 @@
             general = [
               pkgs.neovimPlugins.colorscheme-gruvbox
               pkgs.neovimPlugins.tree-sitter-surrealdb
-              vim-tmux-navigator
-              # LazyVim
               lazy-nvim
               LazyVim
               bufferline-nvim
               lazydev-nvim
-              cmp-buffer
-              cmp-nvim-lsp
-              cmp-path
-              cmp_luasnip
               conform-nvim
-              dashboard-nvim
-              dressing-nvim
               flash-nvim
               friendly-snippets
               gitsigns-nvim
-              indent-blankline-nvim
-              lualine-nvim
-              neo-tree-nvim
-              neoconf-nvim
-              neodev-nvim
+              grug-far-nvim
               noice-nvim
+              lualine-nvim
               nui-nvim
-              nvim-cmp
               nvim-lint
               nvim-lspconfig
-              nvim-notify
-              nvim-spectre
-              nvim-treesitter-context
+              nvim-treesitter
               nvim-treesitter-textobjects
               nvim-ts-autotag
-              nvim-ts-context-commentstring
+              ts-comments-nvim
+              blink-cmp
               nvim-web-devicons
               persistence-nvim
               plenary-nvim
@@ -248,14 +238,6 @@
 
               # sometimes you have to fix some names
               {
-                plugin = luasnip;
-                name = "LuaSnip";
-              }
-              {
-                plugin = catppuccin-nvim;
-                name = "catppuccin";
-              }
-              {
                 plugin = mini-ai;
                 name = "mini.ai";
               }
@@ -264,24 +246,8 @@
                 name = "mini.icons";
               }
               {
-                plugin = mini-bufremove;
-                name = "mini.bufremove";
-              }
-              {
-                plugin = mini-comment;
-                name = "mini.comment";
-              }
-              {
-                plugin = mini-indentscope;
-                name = "mini.indentscope";
-              }
-              {
                 plugin = mini-pairs;
                 name = "mini.pairs";
-              }
-              {
-                plugin = mini-surround;
-                name = "mini.surround";
               }
               # you could do this within the lazy spec instead if you wanted
               # and get the new names from `:NixCats pawsible` debug command
@@ -336,6 +302,10 @@
           #   test = [ (_: [ ]) ];
           # };
           # populates $LUA_PATH and $LUA_CPATH
+          #
+          python3.libraries = {
+            test = [ (_: [ ]) ];
+          };
           extraLuaPackages = {
             test = [ (_: [ ]) ];
           };
@@ -351,16 +321,25 @@
         # These are the names of your packages
         # you can include as many as you wish.
         nvim =
-          { pkgs, mkNvimPlugin, ... }:
+          {
+            pkgs,
+            name,
+            mkPlugin,
+            ...
+          }:
           {
             # they contain a settings set defined above
             # see :help nixCats.flake.outputs.settings
             settings = {
+              suffix-path = true;
+              suffix-LD = true;
               wrapRc = true;
               # IMPORTANT:
               # your alias may not conflict with your other packages.
               # aliases = [ "vim" ];
               neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
+              hosts.python3.enable = true;
+              hosts.node.enable = true;
             };
             # and a set of categories that you want
             # (and other information to pass to lua)
@@ -374,11 +353,13 @@
         # nix doesnt provide the config in this package, allowing you free reign to edit it.
         # then you can swap back to the normal pure package when done.
         testnvim =
-          { pkgs, mkNvimPlugin, ... }:
+          { pkgs, mkPlugin, ... }:
           {
             settings = {
+              suffix-path = true;
+              suffix-LD = true;
               wrapRc = false;
-              unwrappedCfgPath = "/absolute/path/to/config";
+              unwrappedCfgPath = utils.mkLuaInline "os.getenv('HOME') .. '/some/path/to/your/config'";
             };
             categories = {
               general = true;

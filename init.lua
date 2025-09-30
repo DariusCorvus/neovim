@@ -27,8 +27,8 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
   { 'nvim-telescope/telescope-fzf-native.nvim', enabled = require('nixCatsUtils').lazyAdd(true, false) },
   -- disable mason.nvim while using nix
   -- precompiled binaries do not agree with nixos, and we can just make nix install this stuff for us.
-  { 'williamboman/mason-lspconfig.nvim', enabled = require('nixCatsUtils').lazyAdd(true, false) },
-  { 'williamboman/mason.nvim', enabled = require('nixCatsUtils').lazyAdd(true, false) },
+  { 'mason-org/mason-lspconfig.nvim', enabled = require('nixCatsUtils').lazyAdd(true, false) },
+  { 'mason-org/mason.nvim', enabled = require('nixCatsUtils').lazyAdd(true, false) },
   {
     'nvim-treesitter/nvim-treesitter',
     build = require('nixCatsUtils').lazyAdd ':TSUpdate',
@@ -40,13 +40,15 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       auto_install = require('nixCatsUtils').lazyAdd(true, false),
     },
   },
-  { 'folke/lazydev.nvim', ft = "lua",
+  {
+    'folke/lazydev.nvim',
+    ft = 'lua',
     opts = {
       library = {
         -- adds type hints for nixCats global, but LazyDev is just nice in general
-        { path = (nixCats.nixCatsPath or "") .. '/lua', words = { "nixCats" } },
+        { path = (nixCats.nixCatsPath or '') .. '/lua', words = { 'nixCats' } },
       },
-    }
+    },
   },
   -- import/override with your plugins
   { import = 'plugins' },
