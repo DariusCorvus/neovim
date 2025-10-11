@@ -99,6 +99,8 @@
 	  ripgrep
 
 	  git
+
+	  lua-language-server # Language server that offers Lua language support
         ];
       };
 
