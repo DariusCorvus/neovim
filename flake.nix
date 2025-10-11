@@ -101,6 +101,7 @@
 	  git
 
 	  lua-language-server # Language server that offers Lua language support
+	  svelte-language-server # Language server (implementing the language server protocol) for Svelte
         ];
       };
 
