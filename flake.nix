@@ -105,6 +105,7 @@
 	  tailwindcss-language-server # Tailwind CSS Language Server
 	  typescript-language-server # Language Server Protocol implementation for TypeScript using tsserver
 	  typescript # Superset of JavaScript that compiles to clean JavaScript output
+	  vtsls # LSP wrapper for typescript extension of vscode.
         ];
       };
 
