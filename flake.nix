@@ -95,7 +95,10 @@
       lspsAndRuntimeDeps = {
         general = with pkgs; [
 	  zig
+
 	  ripgrep
+
+	  git
         ];
       };
 
