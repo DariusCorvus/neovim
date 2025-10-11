@@ -102,6 +102,7 @@
 
 	  lua-language-server # Language server that offers Lua language support
 	  svelte-language-server # Language server (implementing the language server protocol) for Svelte
+	  tailwindcss-language-server # Tailwind CSS Language Server
         ];
       };
 
