@@ -1,7 +1,0 @@
-{
-  "name": "typescript-svelte-plugin",
-  "version": "1.0.0",
-  "dependencies": {
-    "typescript-svelte-plugin": "0.3.47"
-  }
-}
